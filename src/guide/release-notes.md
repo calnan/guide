@@ -80,6 +80,8 @@ The following are general practices that should be followed when creating releas
   * Release notes across backports
     * If an issue is backported to earlier releases the same note will be used - just add the new release version in the [Affects Version/s]{.jbs-field} field of the release note.
     * Where a different release note is required, then create a separate note with the affects version for the new release - see [JDK-8308194](https://bugs.openjdk.org/browse/JDK-8308194) and [JDK-8322473](https://bugs.openjdk.org/browse/JDK-8322473) for an example.
+  * Adding or Updating Release Notes after GA
+    * If a note needs to be added after the GA of a release, or an existing note needs updating then create the new note, or update the existing note, and then reach out to [ops@openjdk.org](mailto:ops@openjdk.org).
 
 ## RN-labels
 

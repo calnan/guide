@@ -310,7 +310,7 @@ There are two parts to this task, how to do the bookkeeping in JBS, and how to d
 
 ### How to work with JBS when a change is backed out
 
-#. Close the original (failed) JBS issue **(O)**.
+#. Close the original (failed) JBS issue, **(O)**.
    * "Verify" the issue with verification [Fix Failed]{.jbs-value}.
 #. If the intention is to fix the change and submit it again, create a redo-issue **(R)** to track that the work still needs to be done.
    * Clone **(O)** and add the prefix `[REDO]` on the summary - the clone becomes the redo-issue **(R)**.
@@ -319,12 +319,12 @@ There are two parts to this task, how to do the bookkeeping in JBS, and how to d
 #. Setup a backout-issue **(B)**.
    * Alternative 1 - the regression is identified directly.
      * Create a new issue of type [Bug]{.jbs-value}. This new issue will be the backout-issue **(B)**.
-     * Use the same summary as **(R)** prefixed with `[BACKOUT]`.
-     * Add a _relates to_ link between **(B)** and **(O)**.
+     * Use the same summary as **(O)** prefixed with `[BACKOUT]`.
+     * Add a _causes_ link from **(O)** to **(B)**.
    * Alternative 2 - an investigation issue was created **(I)**, and during the investigation backing out the change is identified as the best solution.
      * Use the investigation issue **(I)** for the backout. (Don't create a new **(B)**.)
      * Change summary of **(I)** to the same as **(O)** and prefix with `[BACKOUT]`.
-     * Add a _relates to_ link between **(I)** and **(O)**.
+     * Add a _causes_ link from **(O)** to **(I)**.
 #. If **(O)** had a CSR request, update the CSR issue as follows:
    * Add a _csr-for_ link from the CSR to **(R)**.
    * Add a note to the CSR that explains the reason for the redo and the impact on the CSR.
@@ -382,26 +382,25 @@ index 4961acb2126..399e7cc311f 100644
 
 ## Backing out a backport
 
-In rare cases it may be necessary to back out a backport from an update release without backing out the original fix in mainline. This will require a somewhat different procedure and will result in a small mess in JBS. It's extremely important to add comments in all relevant issues explaining exactly what's happened.
+In rare cases it may be necessary to back out a backport from an update release without backing out the original main fix. This will require a somewhat different procedure and will result in a small mess in JBS. It's extremely important to add comments in all involved issues explaining exactly what's happened.
 
 The steps to take in order to do this are described below. **(M)** used below refers to the main bug entry - the first fix that was later backported.
 
-#. Close the original (failed) JBS backport issue **(O)**.
-   * "Verify" the issue and choose "Fix Failed".
+#. Close the original (failed) JBS backport issue, **(O)**.
+   * "Verify" the issue and choose [Fix Failed]{.jbs-value}.
 #. If the intention is to fix the backport and submit it again, create a redo-issue **(R)** to track that the work still needs to be done.
    * Clone **(M)** and add the prefix `[REDO BACKPORT]` on the summary - the clone becomes the redo-issue **(R)**.
-   * Add a _relates to_ link between **(R)** and **(O)**.
+   * Add a _relates to_ link between **(O)** and **(R)**.
    * Set Fix Version of **(R)** to the target release for the backport - either the exact release if known, or `<N>-pool` if it's not critical which release the fixed backport goes into.
-#. Create a backout-issue **(B)**:
+#. Setup a backout-issue **(B)**:
    * Alternative 1 - the broken backport is identified directly.
-     * Create a sub-task to **(R)** with the same summary, but prefixed with `[BACKOUT BACKPORT]`.
-   * Alternative 2 - an investigation issue was created **(I)**, and during the investigation backing out the backport is identified as the best solution.
-     * Use the investigation issue **(I)** for the backout.
+     * Create a new issue of type [Bug]{.jbs-value}. This new issue will be the backout-issue **(B)**.
+     * Use the same summary as **(M)** prefixed with `[BACKOUT BACKPORT]`.
+     * Add a _causes_ link from **(O)** to **(B)**.
+   * Alternative 2 - an investigation issue **(I)** was created, and during the investigation backing out the backport is identified as the best solution.
+     * Use the investigation issue **(I)** for the backout. (Don't create a new **(B)**.)
      * Change summary of **(I)** to the same as **(M)** and prefix with `[BACKOUT BACKPORT]`.
-     * Move and change type of **(I)** to become a sub-task of **(R)**.
-   * Alternative 3 - no redo issue was created.
-     * Create a backout-issue **(B)** with the same summary as **(M)** and prefix with `[BACKOUT BACKPORT]`.
-     * Add a _relates to_ link between **(B)** and **(M)**.
+     * Add a _causes_ link from **(O)** to **(I)**.
 #. Add comments to **(M)**, **(R)** and **(O)** explaining the situation.
 
 The end result in JBS should look like this:
@@ -411,12 +410,12 @@ The end result in JBS should look like this:
 flowchart TD
   main("Main issue <b>(M)</b><br>JDK-8272373: Example JBS Issue<br>Issue type: Bug<br>Fix version: 18")
   backport("Initial backport <b>(O)</b><br>JDK-8280986: Example JBS Issue<br>Issue type: Backport<br>Fix version: 15.0.2<br>Verification: Fix failed")
-  backout("Backout of JDK-8280986 <b>(B)</b><br>JDK-8280996: [BACKOUT BACKPORT] Example JBS Issue<br>Issue type: Sub-task<br>Fix version: 15.0.2")
+  backout("Backout of JDK-8280986 <b>(B)</b><br>JDK-8280996: [BACKOUT BACKPORT] Example JBS Issue<br>Issue type: Bug<br>Fix version: 15.0.2")
   redo("Redo of backport <b>(R)</b><br>JDK-8280989: [REDO BACKPORT] Example JBS Issue<br>Issue type: Bug<br>Fix version: 15.0.2")
   main --> |backported by| backport
   redo --> |clones| main
+  backport --> |causes| backout
   backport <--> |relates to| redo
-  redo --> |sub-task| backout
 ~~~
 :::
 
