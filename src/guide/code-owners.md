@@ -80,12 +80,12 @@ This list is intended to make it easier to identify which email list to include 
       * [jimage](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/jimage) - Core Libs
       * [jmod](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/jmod) - Core Libs
       * [jrtfs](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/jrtfs) - Core Libs
+      * [lang](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/lang) - Core Libs
       * [[aix](https://github.com/openjdk/jdk/tree/master/src/java.base/aix/classes/jdk/internal/loader), [macosx](https://github.com/openjdk/jdk/tree/master/src/java.base/macosx/classes/jdk/internal/loader), [share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/loader), [unix](https://github.com/openjdk/jdk/tree/master/src/java.base/unix/classes/jdk/internal/loader), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/classes/jdk/internal/loader)]/loader - Core Libs
       * [logger](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/logger) - Core Libs
       * [math](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/math) - Core Libs
       * [[share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/misc), [unix](https://github.com/openjdk/jdk/tree/master/src/java.base/unix/classes/jdk/internal/misc), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/classes/jdk/internal/misc)]/misc - Core Libs, HotSpot
       * [module](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/module) - Core Libs
-      * [org/objectweb](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/org/objectweb) - Core Libs
       * [org/xml](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/org/xml) - Core Libs
       * [perf](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/perf) - Runtime
       * [[linux](https://github.com/openjdk/jdk/tree/master/src/java.base/linux/classes/jdk/internal/platform), [share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/platform), [unix](https://github.com/openjdk/jdk/tree/master/src/java.base/unix/classes/jdk/internal/platform), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/classes/jdk/internal/platform)]/platform - HotSpot
@@ -115,8 +115,8 @@ This list is intended to make it easier to identify which email list to include 
     * [security](https://github.com/openjdk/jdk/tree/master/src/java.base/share/conf/security) - Security
   * [[share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/legal), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/legal)]/legal
   * [man](https://github.com/openjdk/jdk/tree/master/src/java.base/share/man)
-    * [java.md](https://github.com/openjdk/jdk/tree/master/src/src/java.base/share/man/java.md) - Tools, HotSpot
-    * [keytool.md](https://github.com/openjdk/jdk/tree/master/src/src/java.base/share/man/keytool.md) - Security
+    * [java.md](https://github.com/openjdk/jdk/tree/master/src/java.base/share/man/java.md) - Tools, HotSpot
+    * [keytool.md](https://github.com/openjdk/jdk/tree/master/src/java.base/share/man/keytool.md) - Security
   * [[aix](https://github.com/openjdk/jdk/tree/master/src/java.base/aix/native), [linux](https://github.com/openjdk/jdk/tree/master/src/java.base/linux/native), [macosx](https://github.com/openjdk/jdk/tree/master/src/java.base/macosx/native), [share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/native), [unix](https://github.com/openjdk/jdk/tree/master/src/java.base/unix/native), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/native)]/native
     * [common](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/native/common)
     * [[share](https://github.com/openjdk/jdk/tree/master/src/java.base/share/native/include), [unix](https://github.com/openjdk/jdk/tree/master/src/java.base/unix/native/include), [windows](https://github.com/openjdk/jdk/tree/master/src/java.base/windows/native/include)]/include - Runtime, Core Libs

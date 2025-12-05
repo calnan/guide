@@ -30,7 +30,7 @@ A few things to keep in mind when filing an issue:
   * All issues of type [Bug]{.jbs-value} must have the [Affects Version/s]{.jbs-field} set. It's not a bug if it doesn't affect some version.
   * For enhancements the [Affects Version/s]{.jbs-field} should be left empty, unless it is only relevant to a specific release family.
   * See [Indicating what releases an issue is applicable to](#indicating-what-releases-an-issue-is-applicable-to) for more details.
-* Never set [FixVersion/s]{.jbs-field} to an already released version. If you intend for the change to be fixed in a JDK 21 update, set [FixVersion/s]{.jbs-field} to [21-pool]{.jbs-value}. A fix version of [21]{.jbs-value} would indicate the mainline release of JDK 21, which was released in 2023, and it is too late to add more changes there.
+* Never set [Fix Version/s]{.jbs-field} to an already released version. If you intend for the change to be fixed in a JDK 21 update, set [Fix Version/s]{.jbs-field} to [21-pool]{.jbs-value}. A fix version of [21]{.jbs-value} would indicate the mainline release of JDK 21, which was released in 2023, and it is too late to add more changes there.
 * Add relevant [Labels]{.jbs-field} like [[intermittent]{.jbs-label}](#intermittent), [[regression]{.jbs-label}](#regression), [[noreg-self]{.jbs-label}](#noreg-self), [[tier1]{.jbs-label}](#tier) etc.
   * For more information see the [JBS Label Dictionary].
 * Set the priority.
