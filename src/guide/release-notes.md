@@ -73,13 +73,13 @@ As well as the standard [CommonMark link types](https://spec.commonmark.org/0.31
 
 **Linking of JBS issues**
 
-  * any JBS ID of the form `JDK-NNNNNNN` will be linked
+  * Any JBS ID of the form `JDK-NNNNNNN` will be linked.
 
 **Linking to the Java documentation**
 
-  * the linking options defined in JavaDoc [MarkDown](https://openjdk.org/jeps/467#Links) are supported.
-  * links to the JDK tools is supported. To differentiate between `[JarSigner]` the class, and `[jarsigner]` the tool, the tool reference should be in all lowercase.
-  * if a link cannot be found then the string will be rendered as if it had been enclosed in back-ticks - in the EA release notes only, "(link not found)" will be added.
+  * The linking options defined in JavaDoc [MarkDown](https://openjdk.org/jeps/467#Links) are supported.
+  * Links to the JDK tools is supported. To differentiate between `[JarSigner]` the class, and `[jarsigner]` the tool, the tool reference should be in all lowercase.
+  * If a link cannot be found then the string will be rendered as if it had been enclosed in back-ticks - in the EA release notes only, "(link not found)" will be added.
 
 **Manually linking to the Java documentation**
 
