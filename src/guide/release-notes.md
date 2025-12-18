@@ -71,17 +71,17 @@ The following are general practices that should be followed when creating releas
 
 As well as the standard [CommonMark link types](https://spec.commonmark.org/0.31.2/#links) the following custom links are supported:
 
-**Linking of JBS Issues**
+**Linking of JBS issues**
 
   * any JBS ID of the form `JDK-NNNNNNN` will be linked
 
-**Linking to the Java Documentation**
+**Linking to the Java documentation**
 
   * the linking options defined in JavaDoc [MarkDown](https://openjdk.org/jeps/467#Links) are supported.
   * links to the JDK tools is supported. To differentiate between `[JarSigner]` the class, and `[jarsigner]` the tool, the tool reference should be in all lowercase.
   * if a link cannot be found then the string will be rendered as if it had been enclosed in back-ticks - in the EA release notes only, "(link not found)" will be added.
 
-**Manually linking to the Java Documentation**
+**Manually linking to the Java documentation**
 
 When manually adding a link to the Java documentation, put the full link to docs.oracle.com (either the existing page, or what will be the page at GA), for example:
 
