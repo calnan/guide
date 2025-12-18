@@ -67,6 +67,30 @@ The following are general practices that should be followed when creating releas
   * Background info/context
   * Example: A new system property, `jdk.disableLastUsageTracking`, has been introduced to disable JRE last usage tracking for a running VM.
 
+## Linking options within the release note
+
+As well as the standard [CommonMark link types](https://spec.commonmark.org/0.31.2/#links) the following custom links are supported:
+
+**Linking of JBS Issues**
+
+  * any JBS ID of the form `JDK-NNNNNNN` will be linked
+
+**Linking to the Java Documentation**
+
+  * the linking options defined in JavaDoc [MarkDown](https://openjdk.org/jeps/467#Links) are supported.
+  * links to the JDK tools is supported. To differentiate between `[JarSigner]` the class, and `[jarsigner]` the tool, the tool reference should be in all lowercase.
+  * if a link cannot be found then the string will be rendered as if it had been enclosed in back-ticks - in the EA release notes only, "(link not found)" will be added.
+
+**Manually linking to the Java Documentation**
+
+When manually adding a link to the Java documentation, put the full link to docs.oracle.com (either the existing page, or what will be the page at GA), for example:
+
+`https://docs.oracle.com/en/java/javase/&lt;NN>/&lt;path to class>`
+
+and, in the EA versions of the release notes, this will be translated to:
+
+`https://download.java.net/java/early_access/jdk&lt;NN>/&lt;path to class>`
+
 ## Advanced options
   * JEP release notes
     * [Summary]{.jbs-field} - If the change is an actual JEP, use the JEP title.
